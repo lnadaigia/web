@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.Cuser;
 import MODEL.User;
 import Mail.SSLEmail;
-import Mail.sendmail;
+
 
 /**
  * Servlet implementation class forgetpass
