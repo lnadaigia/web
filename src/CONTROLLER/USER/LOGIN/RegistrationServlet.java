@@ -2,6 +2,9 @@ package CONTROLLER.USER.LOGIN;
 
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,14 +59,14 @@ public class RegistrationServlet extends HttpServlet {
    					{
 	   					String body="";
 	   					body+="<br>Chúc mừng bạn đã đăng kí tài khoản tại STVL";
-	   					body+="<br>mời bạn vui long kích vào đây để hoàn tất đăng kí";
-	   					body+="<br> <a href=\"https://localhost:8080/shop/Cregister?id="+i+"&maxacthuc="+code+"\"><a>";
+	   					body+="<br>Mời bạn vui long kích vào đây để hoàn tất đăng kí";
+	   					body+="<br> <a href=\"https://stvlshop.herokuapp.com/Cregister?id="+i+"&maxacthuc="+code+"\"><a>";
 	   					SSLEmail.sendmail(x.getEmail(), "Xác nhận tài khoản", body);
-	   					request.setAttribute("taikhoan", "Thêm tài khoản thành công");
+	   					request.setAttribute("taikhoan", "Chúng tôi vửa gửi tin nhắn xác nhận đến email của bạn");
 	   				}
    				}
    				else
-   					request.setAttribute("taikhoan", null);	
+   					request.setAttribute("taikhoan", "Tài khoản đã tồn tại hoặc chưa kích hoạt");	
    			}
    		}
    		catch (Exception e) {
@@ -71,5 +74,11 @@ public class RegistrationServlet extends HttpServlet {
    		}
    		request.getRequestDispatcher("./login/registration.jsp").forward(request, response);
     }
-   
+       boolean pat(String mau,String vanban)
+   	{
+   		Pattern pattern = Pattern.compile(mau);
+   	    Matcher matcher = pattern.matcher(vanban);
+   	    boolean matches = matcher.matches(); 
+   	    return matches;
+   	}
 }

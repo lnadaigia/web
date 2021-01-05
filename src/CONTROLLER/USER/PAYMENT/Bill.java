@@ -149,25 +149,7 @@ public class Bill extends HttpServlet {
 			
 				
 				SSLEmail.sendmail(u.getEmail(), "STVL:Xác nhận đơn hàng",body);
-				int code = (int) Math.floor(((Math.random() * 899999) + 100000));
-				Xacthucdonhang xt=new Xacthucdonhang();
-				xt.setId_donhang(id);
-				xt.setId_user(u.getId_user());
-				xt.setTinhtrang("0");
-				xt.setMaxacthuc(code+"");
-				int dem=Cxacthucdonhang.themxacthuc(xt);
-				if(dem>0)
-				{
-					String body1="";
-					body1+="Địa chỉ nhận hàng: số 1 Võ Văn Ngân, Thủ Đức, TP HCM";
-					body1+="<br>Mã đơn hàng: " +id;
-					body1+="<br>Tổng thanh toán: "+tongbill;
-					body1+="<br>Địa chỉ giao hàng: "+x.getDiachi();
-					body1+="<br>Sdt người nhận: "+x.getSdt();
-					body1+="<br><a href=\"https://localhost:8080/shop/cpayment?maxacthuc="+code+"&id="+dem+"\"><button>Xác nhận đã giao</button></a>";
-					body1+="<br>"+bang;
-					SSLEmail.sendmail(mail_shipper, "STVL:Giao hàng",body1);
-				}
+				
 		}
 	}
 

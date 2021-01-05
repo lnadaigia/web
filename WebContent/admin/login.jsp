@@ -12,8 +12,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="${pageContext.request.contextPath}/admin/login/favicon.png">
-    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <link rel="icon" type="${pageContext.request.contextPath}/admin/ad.png">
+    <title>STVL Shop</title>
     <!-- Custom CSS -->
     <link href="${pageContext.request.contextPath}/admin/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

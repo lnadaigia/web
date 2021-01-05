@@ -43,7 +43,7 @@ function dropDownMenu() {
             	<div class="input-title">Địa chỉ email:
             	<i class="input-error-txt" style="display: none;">*</i>
             	</div> 
-            	<input placeholder="" autocomplete="" type="text" class="" required name="email">
+            	<input placeholder="" autocomplete="" type="email" class="" required name="email">
             </div>
             <div class="c-input">
             	<div class="input-title">Số điện thoại:

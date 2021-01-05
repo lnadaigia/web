@@ -18,8 +18,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/admin/assets/images/favicon.png">
-    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/admin/ad.png">
+    <title>STVL Shop</title>
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}/admin/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -57,20 +57,17 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                     <a class="navbar-brand" href="${pageContext.request.contextPath}/quanli">
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="${pageContext.request.contextPath}/admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="${pageContext.request.contextPath}/admin/ad.png" alt="homepage" class="dark-logo"  width="120px"/>
                             <!-- Light Logo icon -->
-                            <img src="${pageContext.request.contextPath}/admin/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="${pageContext.request.contextPath}/admin/ad.png" alt="homepage" class="light-logo"width="120px" />
                         </b>
                         <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="${pageContext.request.contextPath}/admin/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="${pageContext.request.contextPath}/admin/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                        <!-- Logo text -->
+                         </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -172,10 +169,11 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Profile</h3>
+                        <h3 class="text-themecolor">Edit Product</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Profile</li>
+                            <li class="breadcrumb-item active">Products</li>
+                             <li class="breadcrumb-item active">Edit Product</li>
                         </ol>
                     </div>
                    
@@ -288,7 +286,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer">
-                © 2018 Adminwrap by wrappixel.com
+                © 2020 Linh Nguyễn Văn
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
