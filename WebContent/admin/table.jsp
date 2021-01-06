@@ -1,4 +1,4 @@
-<%@page import="DAO.Csanpham"%>
+﻿<%@page import="DAO.Csanpham"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="MODEL.Sanpham"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -259,7 +259,7 @@
 		                                                <td><div style="width: 150px;"><c:out value="${i.getMota().trim()}"></c:out></div></td>
 		                                                <td><c:out value="${i.getSl_con()}"></c:out></td>
 		                                                <td><a  class="popup-with-move-anim" href="${pageContext.request.contextPath}/quanli/dssanpham/update?idsp=${i.getCurrentSlide()}">edit</a></td>
-		                                                <td><a href="#" onclick='xoa("${i.getTen_sp().trim()}","${i.getCurrentSlide()}");'><i class="fa fa-times-rectangle"></i></a>  </td>
+		                                                <td><a href="#" onclick='xoa("${i.getTen_sp().trim()}","${i.getCurrentSlide()}");'><i class="fas fa-trash-alt"></i></a>  </td>
 	                                            </tr>
                                             </c:forEach>
                                            
