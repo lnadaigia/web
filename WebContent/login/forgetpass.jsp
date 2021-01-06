@@ -21,7 +21,8 @@
 <div class="login-pg">
     <div class="login-box box">
         <h1>Quên mật khẩu</h1>
-        <form class="login-frm" action="${pageContext.request.contextPath}/Login" method="post">
+        <c:out value="${mail}"></c:out>
+        <form class="login-frm" action="${pageContext.request.contextPath}/forgetpass" method="post">
             <div class="c-input">
             	<div class="input-title">Địa chỉ email:
             		<i class="input-error-txt" style="display: none;">*</i>
@@ -31,6 +32,7 @@
             
             <input type="submit" value="Quên mật khẩu">
             <a href="${pageContext.request.contextPath}/login/registration.jsp">Chưa có tài khoản?</a>
+            <a href="${pageContext.request.contextPath}/login/login.jsp">Đã có tài khoản?</a>
         </form>
     </div>
 </div>

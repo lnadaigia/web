@@ -53,23 +53,23 @@
                         </div>
                         <h2 class="mt-3 text-center">Sign In</h2>
                         <p class="text-center">Enter your email address and password to access admin panel.</p>
-                       <c:if test="${sai!=null}">
+
                        		 <p class="text-center"><c:out value="${sai}"></c:out></p>
-                       </c:if>
+
                         <form class="mt-4" action="${pageContext.request.contextPath}/Loginadmin">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="uname">Username</label>
                                         <input class="form-control" id="uname" type="text"
-                                            placeholder="enter your username" name="uname">
+                                            placeholder="enter your username" name="uname" required="required">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="pwd">Password</label>
                                         <input class="form-control" id="pwd" type="password"
-                                            placeholder="enter your password" name="pass">
+                                            placeholder="enter your password" name="pass" required="required">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">

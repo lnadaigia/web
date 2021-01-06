@@ -31,9 +31,14 @@ function dropDownMenu() {
 	  }
 }
 </script>
+<%
+	if(null==session.getAttribute("userId")) {
+      response.sendRedirect(request.getContextPath()+"/");
+   }
+%>
 <header>
   <input class="checkmenu" type="checkbox" id="menu">
-  <label for="menu" ></label>
+  <label class="menulabel" for="menu" ></label>
   <nav role="off-canvas" class="menu-bar">
   <div class="menu">
     <ul>
@@ -87,7 +92,7 @@ function dropDownMenu() {
   </div>
 </nav>
   <div class="cart-res">
-    <a href=#>
+    <a href="${pageContext.request.contextPath}/Loadcart">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 446.853 446.853" style="enable-background:new 0 0 446.853 446.853;"
 	 xml:space="preserve">
 <g>

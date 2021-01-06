@@ -40,6 +40,7 @@
             </div>
             <input type="submit" value="Đăng nhập">
             <a href="${pageContext.request.contextPath}/login/registration.jsp">Chưa có tài khoản?</a>
+            <a href="${pageContext.request.contextPath}/login/forgetpass.jsp">Quên mật khẩu?</a>
         </form>
     </div>
 </div>

@@ -23,7 +23,7 @@ public class Loginadmin extends HttpServlet {
    @Override
 protected void service(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
 	   HttpSession session=request.getSession();
-   		String url = "/admin/login.jsp";
+   	
 	   try {
 		String uname=request.getParameter("uname");
 		String pass=request.getParameter("pass");
@@ -31,14 +31,17 @@ protected void service(HttpServletRequest request, HttpServletResponse resp) thr
 		if(u!=null &&u.getPermission().equals("1"))
 		{
 			session.setAttribute("admin", u);
-			url="/quanli";
+			 resp.sendRedirect(request.getContextPath()+"/quanli");
 		}
 		else
+		{
 			request.setAttribute("sai", "sai tài khoản hoặc mật khẩu");
+			 request.getServletContext().getRequestDispatcher("/admin/login.jsp").forward(request, resp);
+		}
 	} catch (Exception e) {
-		// TODO: handle exception
+		resp.sendRedirect(request.getContextPath()+"/quanli");
 	}
-	   resp.sendRedirect(request.getContextPath()+"/quanli");
+
 }
 
 }

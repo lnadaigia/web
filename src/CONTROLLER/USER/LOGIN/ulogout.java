@@ -17,9 +17,13 @@ public class ulogout extends HttpServlet {
        
    @Override
 	protected void service(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-	   HttpSession session=request.getSession();  
+	   HttpSession session=request.getSession();
        session.invalidate();
-       resp.sendRedirect(request.getContextPath()+"/login/login.jsp");
+       resp.setHeader("Cache-Control","no-cache"); 
+       resp.setHeader("Cache-Control","no-store");
+       resp.setHeader("Pragma","no-cache");
+       resp.setDateHeader("Expires", 0); 
+       resp.sendRedirect(request.getContextPath()+"/HomePage/home_loggedin.jsp");
 	}
 
 }

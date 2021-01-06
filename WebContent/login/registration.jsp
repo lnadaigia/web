@@ -63,6 +63,7 @@ function dropDownMenu() {
             </div>
             <input type="submit" value="Đăng ký">
             <a href="${pageContext.request.contextPath}/login/login.jsp">Đã có tài khoản?</a>
+            <a href="${pageContext.request.contextPath}/login/forgetpass.jsp">Quên mật khẩu?</a>
         </form>
     </div>
 </div>
