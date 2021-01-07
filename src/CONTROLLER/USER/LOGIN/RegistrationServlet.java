@@ -46,6 +46,7 @@ public class RegistrationServlet extends HttpServlet {
    				x.setPass(password);
    				x.setPermission("0");
    				x.setKichhoat("0");
+   				x.setAvatar("https://image.freepik.com/free-vector/cute-blue-dolphin-avatar_79416-75.jpg");
    				if(Cuser.themUser(x)>0)
    				{
    					Xacthucuser xt=new Xacthucuser();
@@ -59,8 +60,8 @@ public class RegistrationServlet extends HttpServlet {
    					{
 	   					String body="";
 	   					body+="<br>Chúc mừng bạn đã đăng kí tài khoản tại STVL";
-	   					body+="<br>Mời bạn vui long kích vào đây để hoàn tất đăng kí";
-	   					body+="<br> <a href=\"https://stvlshop.herokuapp.com/Cregister?id="+i+"&maxacthuc="+code+"\"><a>";
+	   					body+="<br>Mời bạn vui lòng click vào link dưới vào đây để hoàn tất đăng kí";
+	   					body+="<br> <a href=\"https://stvlshop.herokuapp.com/Cregister?id="+i+"&maxacthuc="+code+"\">click vào đây</a>";
 	   					SSLEmail.sendmail(x.getEmail(), "Xác nhận tài khoản", body);
 	   					request.setAttribute("taikhoan", "Chúng tôi vửa gửi tin nhắn xác nhận đến email của bạn");
 	   				}

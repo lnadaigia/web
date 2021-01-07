@@ -40,8 +40,8 @@ public class LoginServlet extends HttpServlet {
    	    boolean matches = matcher.matches(); 
    	    return matches;
    	}
-    protected void processRequest(HttpServletRequest request,HttpServletResponse response)
-            throws ServletException, IOException {
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	HttpSession session=request.getSession();
     	String url = "/login/login.jsp";
     	try
@@ -52,23 +52,29 @@ public class LoginServlet extends HttpServlet {
 	    	String email = request.getParameter("email");
 	    	String password = request.getParameter("password");
 	    	int loginState = 0;
-	    	User u=Cuser.getUserbyid(email, password);
-	    	if (email==null || password==null || u==null) {
+	    	User u=null;
+	    	if (email==null || password==null ) {
 	    		url = "/login/login.jsp";
 	    		if(email == null) {emailError="Vui lòng nhập email.";}
 	    		if(password == null) {passError="Vui lòng nhập mật khẩu.";}
+	    		
+	    	}
+	    	else 
+	    	{
+	    		u=Cuser.getUserbyid(email, password);
 	    		if(u==null) 
 	    		{
 	    			passError = "Sai mật khẩu.";
 	    			emailError = "Email không tồn tại.";
 	    		}
-	    	}
-	    	else 
-	    	{
-	    		if(u.getKichhoat().equals("1"));
+	    		else
 	    		{
-		    		url = "/HomePage/home_loggedin.jsp"; loginState = 1;
-		    		session.setAttribute("user", u);
+	    			System.out.print(u.getKichhoat());
+	    			if(u.getKichhoat().equals("1"))
+		    		{
+			    		url = "/HomePage/home_loggedin.jsp"; loginState = 1;
+			    		session.setAttribute("user", u);
+		    		}
 	    		}
 	    	}
 	    	request.setAttribute("emailError",emailError);
@@ -81,21 +87,6 @@ public class LoginServlet extends HttpServlet {
     	RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(url);
     	dispatcher.forward(request, response);
     }
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		processRequest(request,response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+  
 
 }
