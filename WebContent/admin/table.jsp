@@ -1,4 +1,4 @@
-﻿<%@page import="DAO.Csanpham"%>
+<%@page import="DAO.Csanpham"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="MODEL.Sanpham"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

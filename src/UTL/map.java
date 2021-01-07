@@ -35,6 +35,7 @@ public class map {
 
 	    configuration.setProperties(settings);
 	    configuration.addAnnotatedClass(Xacthucdonhang.class);
+	    configuration.addAnnotatedClass(Xacthucuser.class);
 	    configuration.addAnnotatedClass(Loai.class);
 	    configuration.addAnnotatedClass(User.class);
 	    configuration.addAnnotatedClass(Sanpham.class);
